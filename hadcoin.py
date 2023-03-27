@@ -25,10 +25,10 @@ from urllib.parse import urlparse
 
 # Part 1 - Building a Blockchain
 
+class Blockchain:
 
-
-
-
-
-
-
+    def __init__(self):
+        self.chain = []
+        self.transactions = [] #all the transaction contains in this list  #before adding  to the block before creating block  we have to store some where so we are stroing in a list
+        self.create_block(proof = 1, previous_hash = '0')
+        self.nodes = set()
