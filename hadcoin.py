@@ -201,3 +201,23 @@ def is_valid():
     else:
         response = {'message': 'Houston, we have a problem. The Blockchain is not valid.'}
     return jsonify(response), 200
+
+
+
+
+
+
+# Adding a new transaction to the Blockchain
+@app.route('/add_transaction', methods = ['POST'])
+def add_transaction():
+    json = request.get_json() #get the json file posted in postman 
+    transaction_keys = ['sender', 'receiver', 'amount'] #all the key are present in json file #any transaction posted in postemnet must have these theree value 
+    if not all(key in json for key in transaction_keys): #if some keys is missing then we give error
+        return 'Some elements of the transaction are missing', 400
+    
+    #if transaction is okay no any key is missing
+    index = blockchain.add_transaction(json['sender'], json['receiver'], json['amount'])
+    response = {'message': f'This transaction will be added to Block {index}'}
+    return jsonify(response), 201
+
+
