@@ -291,3 +291,51 @@ def replace_chain():
     #http://127.0.0.1:5001/connect_node
     #http://127.0.0.1:5002/connect_node
     #http://127.0.0.1:5003/connect_node
+    
+    #suppose to connect 5001 node to ohter node i have to just input other node 
+
+   # {
+  #  "nodes": [
+          #    "http://127.0.0.1:5002",
+             # "http://127.0.0.1:5003"]
+#}
+
+#{
+    #"nodes": ["http://127.0.0.1:5001",
+            
+          #    "http://127.0.0.1:5003"]
+#}
+#{
+    #"nodes": ["http://127.0.0.1:5001",
+            #  "http://127.0.0.1:5002"
+            # ]
+#}
+
+#3
+#now wer're going to test the consensus we're going to test what happens if one node we get a chain that is larger than other chain in other node
+            
+                #http://127.0.0.1:5001/mine_block
+                #http://127.0.0.1:5001/get_chain
+                
+                
+                
+                #check in other node 
+                #so if we check in other node other block may not added so 
+                    #http://127.0.0.1:5002/get_chain
+         #http://127.0.0.1:5003/get_chain
+         
+         
+         
+         #therfore to make same chain 
+                  #http://127.0.0.1:5002/replace_chain
+         #http://127.0.0.1:5003/replace_chain
+         
+         
+         
+         
+         
+         
+         
+            ##################################
+    #http://127.0.0.1:5002/mine_block
+    #http://127.0.0.1:5003/connect_node/mine_block
