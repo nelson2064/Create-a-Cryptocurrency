@@ -254,3 +254,25 @@ def replace_chain():
         response = {'message': 'All good. The chain is the largest one.',
                     'actual_chain': blockchain.chain}
     return jsonify(response), 200
+
+
+
+
+#lets test
+
+#to make everything ready for demo and therfore we're going to prepare the json file that will need to post on post man when we interact with our blockchain to exchange some crypto currencies 
+
+#>>>>
+# so we'll have actuall two json files tomake one json file that wqill contain all the addresses of of the node and one of the json file will contain the format of a transaction you know we will prepare the right format with the right three keys sender the receiver and amount that will get something ready to post in postman
+# and aslo what we will do is our servers ready and to do this will make actually three python files each of them will be connected to a differnet port one port for me one port for curial and another port for you okay i will be on post 501 cruial on 502 and you on 503
+
+#json file are ready after this we will be ready for demo so we will be create three python files which will represent our servers of our blockchain #so our blockchain will be decnetralized netowrk of 3 nodes and so basically what we're about to do now is get this node ready
+
+#make all node ready 
+    
+#lets create a cryptocurrency interacting with our blockchain in post man on our three node with you with cruel and me
+
+#we have everything ready now the question is how are we going to do that demo well i could either test it on severla computers or i could even make a call with curial and do a live   video chat  you know with him being in austalia and receiving the adcoins in live i hingk of doing but streaming would not be that great i think and thereofre i come up with another solution which is to creat two other consoles here which is exactly like having two other computers connected to two differnet servers so lets do 5001 in one console 5002 in another 5003 in another console
+
+
+
