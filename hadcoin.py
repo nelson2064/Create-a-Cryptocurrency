@@ -143,6 +143,18 @@ class Blockchain:
 
 
 
+#now welcome to part2 and congraturlations again for developing correctly part 1 to turn this previous general purpose blockchain ito cryptocurrency 
+
+
+
+
+
+
+
+
+
+# Part 2 - Mining our Blockchain
+
 
 
 
