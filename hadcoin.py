@@ -119,6 +119,27 @@ class Blockchain:
     
    
 
+    # method that will replace any chain that is shorter than the longest chain among all the nodes of the network 
+    #we weill call this function in a specific node and you know since each node contains a specific version of the block chain whether it is up to date or not well we will need to apply this replace chian fucntion inside a specific node 
+    def replace_chain(self):
+        network = self.nodes  #network variable is our set of nodes all around the world 
+        longest_chain = None #we don't know which is the node have longest chain we havent scan the network yet 
+        max_length = len(self.chain)
+        for node in network:
+            response = requests.get(f'http://{node}/get_chain')         #so in place of node we have our address so different node have different network so we are getting the network of different node 
+            if response.status_code == 200:      #check everything alright
+                length = response.json()['length'] #taking length
+                chain = response.json()['chain'] #taking all the chain 
+                #finallt get length of the chain in differnet network 
+                if length > max_length and self.is_chain_valid(chain): #our lenght is greater then maxlenght if then maxlenght is equal to length but this will run if the chain is valid if the chain is not valid we don't take that chain of that network 
+                    max_length = length
+                    longest_chain = chain         #updating longest chain 
+        if longest_chain:                #if the longest chain is not non then it means it is updated and now 
+            self.chain = longest_chain       #so the reaal chain is the longest chain
+            return True#if updated true
+        return False#if not false if up conditon don't match means if longest_chan is none retrun false because chain is not updated 
+
+
 
 
 
