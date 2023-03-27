@@ -276,3 +276,9 @@ def replace_chain():
 
 
 
+#1
+#first test to check you have your genesis block
+
+#http://127.0.0.1:5001/get_chain
+#http://127.0.0.1:5002/get_chain
+#http://127.0.0.1:5003/get_chain
