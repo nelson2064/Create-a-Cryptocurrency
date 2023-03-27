@@ -62,8 +62,6 @@ class Blockchain:
         encoded_block = json.dumps(block, sort_keys = True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
     
-  
-
     def is_chain_valid(self, chain):
         previous_block = chain[0]
         block_index = 1
@@ -80,10 +78,14 @@ class Blockchain:
             block_index += 1
         return True
     
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
     def add_transaction(self, sender, receiver, amount):         #amount of cryptocurrencyin this casw our crytocurrency name is adcoin
         self.transactions.append({'sender': sender,                    #the transactions will be dictionary added in the transactions list
                                   'receiver': receiver, 
@@ -97,3 +99,29 @@ class Blockchain:
     
     
     
+    
+    
+    
+    #method to add node 
+    
+           #check it in console 
+   # from urllib.parse import urlparse
+   # address = "http:///127.0.0.1:5000/"
+   # parsed_url = urlparse(address)
+   # parsed_url
+   # parsed_url.netloc
+    
+    def add_node(self, address):           #address of node #different port for each node 
+        parsed_url = urlparse(address)
+        self.nodes.add(parsed_url.netloc)           #this is inof to indentify the node  127.0.0.1:5000
+    
+    
+    
+   
+
+
+
+
+
+
+
