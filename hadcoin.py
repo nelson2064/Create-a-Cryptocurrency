@@ -282,3 +282,12 @@ def replace_chain():
 #http://127.0.0.1:5001/get_chain
 #http://127.0.0.1:5002/get_chain
 #http://127.0.0.1:5003/get_chain
+
+
+#2
+#first post request to connect node with each other
+#select post
+  
+    #http://127.0.0.1:5001/connect_node
+    #http://127.0.0.1:5002/connect_node
+    #http://127.0.0.1:5003/connect_node
