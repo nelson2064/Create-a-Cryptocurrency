@@ -221,3 +221,24 @@ def add_transaction():
     return jsonify(response), 201
 
 
+# Part 3 - Decentralizing our Blockchain
+    
+
+#so contractualtion for passing 1 and 2 
+    #decnetralizing our blockchain our crypto currency 
+
+#first to connect any new node you like in our decnetalized netwrok and second one to replace the cahin in any node that is not up to date on the blockchain and that is that doesn't contian the last version of the blockchain right after a new block was mine on another one 
+    #we will make last 2 request and we are ready for demo
+
+# Connecting new nodes
+@app.route('/connect_node', methods = ['POST'])
+def connect_node():          
+    json = request.get_json()
+    nodes = json.get('nodes')
+    if nodes is None:
+        return "No node", 400
+    for node in nodes:
+        blockchain.add_node(node)
+    response = {'message': 'All the nodes are now connected. The Hadcoin Blockchain now contains the following nodes:',
+                'total_nodes': list(blockchain.nodes)}
+    return jsonify(response), 201
