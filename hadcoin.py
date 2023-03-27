@@ -159,3 +159,11 @@ class Blockchain:
 # Creating a Web App
 app = Flask(__name__)
 
+#wy do we need to create such an address and scond how are we gong to create that address
+#> whenever a miner mines a new block well he actually gets some kryptos that's exactly what happens for bitcoin example bitcon miner and mines your block he or she gets some bitcoins and therfore there s a transaction from the node on whcih the miner is to this miner getting the bitcoins and what is hy it is fundamental to get an address for this node  it's because whenever we mine a new block here for not the bitcon the had coin well there is going to be a tansaction from this node from the start address to yourslef (this is the first type of trnasaction there is genraal type of transaction also liee nelson to ram) 
+#don't forget first transaction whenever a miner mine the new block he gets some adcoins and therefore there is a transaction from thenode to the miner
+# Creating an address for the node on Port 5000
+node_address = str(uuid4()).replace('-', '')  #first address of our node first node address this will be the address of the node on on port 5000         #uuid4 function form theuuid library and this is exactly how we'll create that address thsi willl generate a random address a unique address and this address will be the address of our node 
+
+# Creating a Blockchain
+blockchain = Blockchain()
