@@ -167,3 +167,20 @@ node_address = str(uuid4()).replace('-', '')  #first address of our node first n
 
 # Creating a Blockchain
 blockchain = Blockchain()
+
+# Mining a new block
+@app.route('/mine_block', methods = ['GET'])
+def mine_block():
+    previous_block = blockchain.get_previous_block()
+    previous_proof = previous_block['proof']
+    proof = blockchain.proof_of_work(previous_proof)
+    previous_hash = blockchain.hash(previous_block)
+    blockchain.add_transaction(sender = node_address, receiver = 'Hadelin', amount = 1) #reciver will be the miner so the amount the miner will get 1 as the proof of work is quite easy and as recivere miner i am putting myself my name is hadelin
+    block = blockchain.create_block(proof, previous_hash)
+    response = {'message': 'Congratulations, you just mined a block!',
+                'index': block['index'],
+                'timestamp': block['timestamp'],
+                'proof': block['proof'],
+                'previous_hash': block['previous_hash'],
+                'transactions': block['transactions']}
+    return jsonify(response), 200
