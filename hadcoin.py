@@ -5,6 +5,8 @@
 # Postman HTTP Client: https://www.getpostman.com/
 # requests==2.18.4: pip install requests==2.18.4
 
+
+
 # Importing the libraries
 import datetime
 import hashlib
@@ -117,8 +119,6 @@ class Blockchain:
     
     
     
-   
-
     # method that will replace any chain that is shorter than the longest chain among all the nodes of the network 
     #we weill call this function in a specific node and you know since each node contains a specific version of the block chain whether it is up to date or not well we will need to apply this replace chian fucntion inside a specific node 
     def replace_chain(self):
@@ -143,6 +143,17 @@ class Blockchain:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #now welcome to part2 and congraturlations again for developing correctly part 1 to turn this previous general purpose blockchain ito cryptocurrency 
 
 
@@ -155,9 +166,10 @@ class Blockchain:
 
 # Part 2 - Mining our Blockchain
 
-
 # Creating a Web App
 app = Flask(__name__)
+
+
 
 #wy do we need to create such an address and scond how are we gong to create that address
 #> whenever a miner mines a new block well he actually gets some kryptos that's exactly what happens for bitcoin example bitcon miner and mines your block he or she gets some bitcoins and therfore there s a transaction from the node on whcih the miner is to this miner getting the bitcoins and what is hy it is fundamental to get an address for this node  it's because whenever we mine a new block here for not the bitcon the had coin well there is going to be a tansaction from this node from the start address to yourslef (this is the first type of trnasaction there is genraal type of transaction also liee nelson to ram) 
@@ -207,6 +219,9 @@ def is_valid():
 
 
 
+
+
+
 # Adding a new transaction to the Blockchain
 @app.route('/add_transaction', methods = ['POST'])
 def add_transaction():
@@ -219,6 +234,16 @@ def add_transaction():
     index = blockchain.add_transaction(json['sender'], json['receiver'], json['amount'])
     response = {'message': f'This transaction will be added to Block {index}'}
     return jsonify(response), 201
+
+
+
+
+
+
+
+
+
+
 
 
 # Part 3 - Decentralizing our Blockchain
@@ -276,12 +301,16 @@ def replace_chain():
 
 
 
+
+
 #1
 #first test to check you have your genesis block
 
 #http://127.0.0.1:5001/get_chain
 #http://127.0.0.1:5002/get_chain
 #http://127.0.0.1:5003/get_chain
+
+
 
 
 #2
@@ -291,8 +320,8 @@ def replace_chain():
     #http://127.0.0.1:5001/connect_node
     #http://127.0.0.1:5002/connect_node
     #http://127.0.0.1:5003/connect_node
-    
-    #suppose to connect 5001 node to ohter node i have to just input other node 
+
+#suppose to connect 5001 node to ohter node i have to just input other node 
 
    # {
   #  "nodes": [
@@ -310,6 +339,8 @@ def replace_chain():
             #  "http://127.0.0.1:5002"
             # ]
 #}
+
+
 
 #3
 #now wer're going to test the consensus we're going to test what happens if one node we get a chain that is larger than other chain in other node
@@ -339,15 +370,20 @@ def replace_chain():
             ##################################
     #http://127.0.0.1:5002/mine_block
     #http://127.0.0.1:5003/connect_node/mine_block
+            
     
-      
+    
+    
     #4 
     #next post request whcich is add transaction post request
           #http://127.0.0.1:5001/add_transaction  
-          
-          
-          
+
 # Running the app
 app.run(host = '0.0.0.0', port = 5000)
+
+
+
+
+
 
 
