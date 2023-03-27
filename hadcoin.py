@@ -339,3 +339,8 @@ def replace_chain():
             ##################################
     #http://127.0.0.1:5002/mine_block
     #http://127.0.0.1:5003/connect_node/mine_block
+    
+      
+    #4 
+    #next post request whcich is add transaction post request
+          #http://127.0.0.1:5001/add_transaction  
