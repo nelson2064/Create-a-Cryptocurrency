@@ -32,3 +32,22 @@ class Blockchain:
         self.transactions = [] #all the transaction contains in this list  #before adding  to the block before creating block  we have to store some where so we are stroing in a list
         self.create_block(proof = 1, previous_hash = '0')
         self.nodes = set()
+    
+    def create_block(self, proof, previous_hash):
+        block = {'index': len(self.chain) + 1,
+                 'timestamp': str(datetime.datetime.now()),
+                 'proof': proof,
+                 'previous_hash': previous_hash,
+                 'transactions': self.transactions} 
+        #after creating a new block in new block new transaction will came so making the transaciton empty
+        self.transactions = []
+        self.chain.append(block)
+        return block
+
+
+
+
+
+
+
+
