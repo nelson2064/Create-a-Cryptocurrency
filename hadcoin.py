@@ -84,4 +84,16 @@ class Blockchain:
 
 
 
-
+    def add_transaction(self, sender, receiver, amount):         #amount of cryptocurrencyin this casw our crytocurrency name is adcoin
+        self.transactions.append({'sender': sender,                    #the transactions will be dictionary added in the transactions list
+                                  'receiver': receiver, 
+                                  'amount': amount})            # defined a format of transaction
+        previous_block = self.get_previous_block()
+        return previous_block['index'] + 1                  #index of the new block which is going to be created where this transsaction will go 
+    
+    
+    
+    #what is consenensus >>>    consensus is an algorithm to make sure that all the notes contain the same chain ata nay time. so whenvever block is min on any node you know welcomes new transaction that happen around the node we make sure all the ohter nodes on decentralized network are also updated with same chain 
+    
+    
+    
